@@ -19,11 +19,20 @@ Launch an EC2 Instance using Ansible Playbook [yml](./aws-ec.yml)
     brew install ansible      
 or
 
-    pip install ansible  
+    pip3 install ansible  
 check      
 
     ansible --version
 
+>  Install Boto with pip, ([Boto](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html) is the Amazon Web Services (AWS) SDK for Python)
+
+    pip3 install boto
+
+>  Create a .boto file locally in home directory from the AWS credentials in credentials.csv (AWS account or IAM user credentials) 
+
+    [Credentials]
+    aws_access_key_id = [Access key ID]
+    aws_secret_access_key = [Secret access key]
 
 
 pip3 install kafka-python
