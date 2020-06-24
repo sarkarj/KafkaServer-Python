@@ -1,6 +1,6 @@
 # KafkaServer-Python
 
-Buiding a [Kafka](https://kafka.apache.org/) server as a **microservice**, from an automated **containerized** implementation in **AWS EC2** and use **[Kafka-Python](https://pypi.org/project/kafka-python/)** consumer and producer in few simple steps!
+Buiding a **[Kafka](https://kafka.apache.org/)** server as a **microservice**, from an automated **containerized** implementation in **[AWS EC2](https://aws.amazon.com/console/)** and use **[Kafka-Python](https://pypi.org/project/kafka-python/)** consumer and producer in few simple steps!
 
 ## Kafka
 Kafka is an **open source**, distributed, partitioned, fault-tolerant, and a horizontally scalable streaming platform used as a  **real-time publish-subscribe** messaging system. It persists data like a log aggregation and allows applications to push, pull, and process a continuous flow of data in real-time. It also supports strong recovery from failure mechanisms.
