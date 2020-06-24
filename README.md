@@ -12,8 +12,9 @@ Kafka is an **open source**, distributed, partitioned, fault-tolerant, and a hor
 
 ## Getting started with the setup
 
+Launch an EC2 Instance Using Ansible Playbook 
 
-
+> **Note:** [Ansible](https://www.ansible.com) automation engine will be used for [AWS EC2](https://aws.amazon.com/console/) provisioning and application deployment.
 
 
 pip3 install kafka-python
