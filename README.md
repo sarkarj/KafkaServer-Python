@@ -101,11 +101,11 @@ or
     
     docker-compose -f docker-compose.yml up -d
 
-> Note - Stop a cluster
+> Stop a cluster
      
      docker-compose stop
 
-> Note - Add more brokers
+> Add more brokers
 
     docker-compose scale kafka=3
 
