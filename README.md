@@ -12,7 +12,7 @@ Kafka is an **open source**, distributed, partitioned, fault-tolerant, and a hor
 
 ## Getting started with the setup
 
-## Step 1 Create AWS EC2 instance
+## Step 1 - Create AWS EC2 instance
 
 Launch an EC2 Instance using Ansible Playbook [yml](./aws-ec.yml). 
 Requirements - Ansible, Python , Boto and an AWS Account to Launch an EC2 instance.
@@ -77,7 +77,7 @@ Download the current release of docker compose and apply executable permissions 
     sudo chmod +x /usr/local/bin/docker-compose
 
 
-## Step 2 Configure Kafka Container
+## Step 2 - Configure Kafka Container
 
 Create a [docker-compose](./docker-compose.yml) by pulling the Apache Kafka docker image to run [Kafka](https://hub.docker.com/r/wurstmeister/kafka/) and [ZooKeeper](https://hub.docker.com/r/wurstmeister/zookeeper/)
 
@@ -93,5 +93,32 @@ Create a [docker-compose](./docker-compose.yml) by pulling the Apache Kafka dock
 
 
 <img src="./Img/docker-compose.png">
+
+Start a cluster
+
+    docker-compose up -d
+or
+    
+    docker-compose -f docker-compose.yml up -d
+
+> Note - Stop a cluster
+     
+     docker-compose stop
+
+> Note - Add more brokers
+
+    docker-compose scale kafka=3
+
+List the topic
+
+    docker-compose exec kafka /opt/kafka/bin/kafka-topics.sh --list --zookeeper zookeeper:2181
+
+create a new topic
+
+    docker-compose exec kafka /opt/kafka/bin/kafka-topics.sh --create --zookeeper zookeeper:2181 --replication-factor 1 --partitions 1 --topic Topic3
+
+
+
+
 
 pip3 install kafka-python
