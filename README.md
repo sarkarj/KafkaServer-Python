@@ -115,6 +115,8 @@ View the running containers
 
     docker-compose scale kafka=3
 
+Now the Kafka and ZooKeeper are running as a microservice
+
 List the topic
 
     docker-compose exec kafka /opt/kafka/bin/kafka-topics.sh --list --zookeeper zookeeper:2181
@@ -125,5 +127,16 @@ create a new topic
 
 <img src="./Img/topic.png">
 
+Run the Kafka Producer and Consumer from CLI
+
+Start the producer: 
+    
+    docker-compose exec kafka /opt/kafka/bin/kafka-console-producer.sh --bootstrap-server kafka:9092 --topic Topic1
+    
+Start the consumer (in a second terminal): 
+
+    docker-compose exec kafka /opt/kafka/bin/kafka-console-consumer.sh --bootstrap-server kafka:9092 --topic Topic2 --from-beginning
+
+<img src="./Img/runlocal.png">
 
 pip3 install kafka-python
