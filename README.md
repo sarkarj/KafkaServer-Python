@@ -7,7 +7,7 @@ Kafka is an **open source**, distributed, partitioned, fault-tolerant, and a hor
 
 <img src="./Img/kafka.png"> <img src="./Img/kafkaPart.png">
 
-## Kafka
+## Kafka-Python
 [Kafka-Python](https://pypi.org/project/kafka-python/) client is a Python implementation of the Apache Kafka distributed stream processing system with [KafkaConsumer](https://kafka-python.readthedocs.io/en/master/apidoc/KafkaConsumer.html) (message consumer API) and [KafkaProducer](https://kafka-python.readthedocs.io/en/master/apidoc/KafkaProducer.html) (asynchronous message producer API) 
 
 ## Getting started with the setup
