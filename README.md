@@ -144,3 +144,10 @@ Start the consumer (in a second terminal):
 Install Kafka-python using Python pip Package Manager in the local system to call the Producer and Consumer API
 
     pip3 install kafka-python
+
+Creating a Kafka Consumer 
+
+    from kafka import KafkaConsumer
+    consumer = KafkaConsumer('Topic1', bootstrap_servers='3.17.156.95:9092')
+    for msg in consumer:
+    print (msg.key, msg.value)
