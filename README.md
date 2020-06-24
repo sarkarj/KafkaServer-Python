@@ -52,7 +52,11 @@ Run the playbook -
     
 <img src="./Img/ansible-playbook-run.png">
 
-2. AWS EC2 instance is running now. SSH to the AWS instance
+2. AWS EC2 instance is running now. SSH to the newly created AWS instance
+
+        ssh -i "EC2KeyPair.pem" ec2-user@ec2-3-17-156-95.us-east-2.compute.amazonaws.com
+
+<img src="./Img/ssh-ec2.png">
 
         
         
