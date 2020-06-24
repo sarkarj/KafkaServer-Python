@@ -37,7 +37,7 @@ or
 > The deployment playbook - [aws-ec.yml](./aws-ec.yml)
 
 
-|    key          |description                    |
+|    key          |    description                |
 |---------------- |-------------------------------|
 |`'gather_facts'` | gathers facts about remote hosts (boolean)|
 |`'key_name'`     | EC2 Console -> NETWORK & SECURITY -> Key pairs|
@@ -81,11 +81,15 @@ Download the current release of docker compose and apply executable permissions 
 
 Create a [docker-compose](./docker-compose.yml) by pulling the Apache Kafka docker image to run [Kafka](https://hub.docker.com/r/wurstmeister/kafka/) and [ZooKeeper](https://hub.docker.com/r/wurstmeister/zookeeper/)
 
-
-	Configure the advertised hostname explicitly, using KAFKA_ADVERTISED_HOST_NAME and define KAFKA_ZOOKEEPER_CONNECT
-
-	To create topics during the build set KAFKA_CREATE_TOPICS environment variable. Ex. Topic1 will have 1 partition and 1 replica
-
+|    environment variables      | description                    |
+|-------------------------------|-------------------------------|
+|`'container_name'`             | name of the docker containers for zookeeper and kafka|
+|`'image'`                      | pull zookeeper and kafka images from docker hub|
+|`'ports'`                      | zookeeper port 2181, kafka port 9092|
+|`'KAFKA_ADVERTISED_HOST_NAME'` | explicitly define the public IP of the running AWS EC2 instance|
+|`'KAFKA_ADVERTISED_PORT'`      | kafka port 9092|
+|`'KAFKA_ZOOKEEPER_CONNECT'`    | explicitly define the zookeeper node on port 2181|
+|`'KAFKA_CREATE_TOPICS'`        | create topics during the build, example Topic1 will have 1 partition and 1 replica|
 
 
         
