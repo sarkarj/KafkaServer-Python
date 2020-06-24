@@ -12,7 +12,7 @@ Kafka is an **open source**, distributed, partitioned, fault-tolerant, and a hor
 
 ## Getting started with the setup
 
-`'Step 1'`
+## Step 1
 
 Launch an EC2 Instance using Ansible Playbook [yml](./aws-ec.yml). 
 Requirements - Ansible, Python , Boto and an AWS Account to Launch an EC2 instance.
@@ -54,7 +54,7 @@ Run the playbook -
     
 <img src="./Img/ansible-playbook-run.png">
 
-`'Step 2'`
+## Step 2
 
 AWS EC2 instance is running now. SSH to the newly created AWS instance
 
@@ -62,6 +62,17 @@ AWS EC2 instance is running now. SSH to the newly created AWS instance
 
 <img src="./Img/ssh-ec2.png">
 
-        
+Update the installed packages and package cache and then install [docker] (https://docs.docker.com/get-docker/)	engine in EC2 instance					
+					
+    sudo yum update -y
+	sudo yum install docker
+	sudo service docker start  
+    sudo usermod -a -G docker ec2-user
+    
+Adding the ec2-user to the docker group to execute docker commands without using sudo, then close the current terminal and log back in a new SSH session
+
+	
+
+
         
 pip3 install kafka-python
