@@ -151,3 +151,5 @@ Creating a Kafka [Consumer](./kafkaconsumer.py)
     consumer = KafkaConsumer('Topic1', bootstrap_servers='3.17.156.95:9092')
     for msg in consumer:
     print (msg.key, msg.value)
+
+[Python-Kafka](./Untitled.ipynb) client for KafkaConsumer and KafkaProducer
