@@ -32,7 +32,21 @@ or
     aws_access_key_id = [Access key ID]
     aws_secret_access_key = [Secret access key]
 
-> Run the playbook - 
+> The deployment playbook - [aws-ec.yml](./aws-ec.yml)
+
+
+|    key          |description                    |
+|---------------- |-------------------------------|
+|`'gather_facts'` | gathers facts about remote hosts (boolean)|
+|`'key_name'`     | EC2 Console -> NETWORK & SECURITY -> Key pairs|
+|`'instance_type'`| t2.micro or t2.small|
+|`'image'`        | define an Amazon Machine Image (AMI)|
+|`'group'`        | define a security Group, EC2 Console -> NETWORK & SECURITY -> Security Groups|
+|`'count'`        | number of instances to launch|
+|`'vpc_subnet_id'`| From VPC - Select a Subnet ID in the Availability Zone|
+|`'wait'`         | playbook to wait for the instance to be launched and assign a public IP|
+
+Run the playbook - 
 
     ansible-playbook aws-ec.yml
 
