@@ -101,6 +101,10 @@ or
     
     docker-compose -f docker-compose.yml up -d
 
+View the running containers
+
+    docker ps
+    
 > Stop a cluster
      
      docker-compose stop
@@ -117,8 +121,7 @@ create a new topic
 
     docker-compose exec kafka /opt/kafka/bin/kafka-topics.sh --create --zookeeper zookeeper:2181 --replication-factor 1 --partitions 1 --topic Topic3
 
-
-
+<img src="./Img/topic.png">
 
 
 pip3 install kafka-python
