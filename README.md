@@ -12,7 +12,7 @@ Kafka is an **open source**, distributed, partitioned, fault-tolerant, and a hor
 
 ## Getting started with the setup
 
-## Step 1
+## Step 1 Create AWS EC2 instance
 
 Launch an EC2 Instance using Ansible Playbook [yml](./aws-ec.yml). 
 Requirements - Ansible, Python , Boto and an AWS Account to Launch an EC2 instance.
@@ -54,7 +54,7 @@ Run the playbook -
     
 <img src="./Img/ansible-playbook-run.png">
 
-## Step 2
+## Step 2 Configure Docker
 
 AWS EC2 instance is running now. SSH to the newly created AWS instance
 
@@ -62,16 +62,30 @@ AWS EC2 instance is running now. SSH to the newly created AWS instance
 
 <img src="./Img/ssh-ec2.png">
 
-Update the installed packages and package cache and then install [docker] (https://docs.docker.com/get-docker/)	engine in EC2 instance					
-					
+Update the installed packages and package cache and then install [docker] (https://docs.docker.com/get-docker/)	engine in EC2 instance
+
     sudo yum update -y
-	sudo yum install docker
-	sudo service docker start  
+    sudo yum install docker
+    sudo service docker start  
     sudo usermod -a -G docker ec2-user
     
-Adding the ec2-user to the docker group to execute docker commands without using sudo, then close the current terminal and log back in a new SSH session
+Here adding the ec2-user to the docker group to execute docker commands without using sudo, then close the current terminal and log back in a new SSH session
 
-	
+Download the current release of docker compose and apply executable permissions to the binary
+
+    sudo curl -L "https://github.com/docker/compose/releases/download/1.26.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+    sudo chmod +x /usr/local/bin/docker-compose
+
+
+## Step 2 Configure Kafka Container
+
+Create a [docker-compose](./docker-compose.yml) by pulling the Apache Kafka docker image to run [Kafka](https://hub.docker.com/r/wurstmeister/kafka/) and [ZooKeeper](https://hub.docker.com/r/wurstmeister/zookeeper/)
+
+
+	Configure the advertised hostname explicitly, using KAFKA_ADVERTISED_HOST_NAME and define KAFKA_ZOOKEEPER_CONNECT
+
+	To create topics during the build set KAFKA_CREATE_TOPICS environment variable. Ex. Topic1 will have 1 partition and 1 replica
+
 
 
         
