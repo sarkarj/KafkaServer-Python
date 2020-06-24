@@ -12,9 +12,18 @@ Kafka is an **open source**, distributed, partitioned, fault-tolerant, and a hor
 
 ## Getting started with the setup
 
-Launch an EC2 Instance Using Ansible Playbook 
+Launch an EC2 Instance using Ansible Playbook [yml](./aws-ec.yml)  
 
-> **Note:** [Ansible](https://www.ansible.com) automation engine will be used for [AWS EC2](https://aws.amazon.com/console/) provisioning and application deployment.
+> **Note:** [Ansible](https://docs.ansible.com) automation engine will be used for [AWS EC2](https://aws.amazon.com/console/) provisioning and application deployment. Install Ansible for Mac (using Homebrew or Python pip Package Manager).
+
+    brew install ansible      
+or
+
+    pip install ansible  
+check      
+
+    ansible --version
+
 
 
 pip3 install kafka-python
