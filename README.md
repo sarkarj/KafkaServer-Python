@@ -104,7 +104,9 @@ or
 View the running containers
 
     docker ps
-    
+
+<img src="./Img/dockerps.png">
+
 > Stop a cluster
      
      docker-compose stop
