@@ -135,7 +135,7 @@ Start the producer:
     
 Start the consumer (in a second terminal): 
 
-    docker-compose exec kafka /opt/kafka/bin/kafka-console-consumer.sh --bootstrap-server kafka:9092 --topic Topic2 --from-beginning
+    docker-compose exec kafka /opt/kafka/bin/kafka-console-consumer.sh --bootstrap-server kafka:9092 --topic Topic1 --from-beginning
 
 <img src="./Img/runlocal.png">
 
