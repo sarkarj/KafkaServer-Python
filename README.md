@@ -54,7 +54,7 @@ Run the playbook -
     
 <img src="./Img/ansible-playbook-run.png">
 
-## Step 2 Configure Docker
+## Step 2 - Configure Docker
 
 AWS EC2 instance is running now. SSH to the newly created AWS instance
 
@@ -77,7 +77,7 @@ Download the current release of docker compose and apply executable permissions 
     sudo chmod +x /usr/local/bin/docker-compose
 
 
-## Step 2 - Configure Kafka Container
+## Step 3 - Configure Kafka Container
 
 Create a [docker-compose](./docker-compose.yml) by pulling the Apache Kafka docker image to run [Kafka](https://hub.docker.com/r/wurstmeister/kafka/) and [ZooKeeper](https://hub.docker.com/r/wurstmeister/zookeeper/)
 
@@ -139,4 +139,8 @@ Start the consumer (in a second terminal):
 
 <img src="./Img/runlocal.png">
 
-pip3 install kafka-python
+## Step 3 - Execute Python-Kafka client remotely
+
+Install Kafka-python using Python pip Package Manager in the local system to call the Producer and Consumer API
+
+    pip3 install kafka-python
