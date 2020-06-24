@@ -151,5 +151,12 @@ Creating a Kafka [Consumer](./kafkaconsumer.py)
     consumer = KafkaConsumer('Topic1', bootstrap_servers='3.17.156.95:9092')
     for msg in consumer:
     print (msg.key, msg.value)
+    
+Creating a Kafka [Producer](./Untitled.ipynb) 
 
-[Python-Kafka](./Untitled.ipynb) client for KafkaConsumer and KafkaProducer
+    from kafka import KafkaProducer
+    producer = KafkaProducer(bootstrap_servers='3.17.156.95:9092')
+    for _ in range(3):
+    producer.send('Topic1', key=b'RemoteSystem', value=b'Message From a Remote System')
+
+
