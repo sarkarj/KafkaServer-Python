@@ -92,5 +92,6 @@ Create a [docker-compose](./docker-compose.yml) by pulling the Apache Kafka dock
 |`'KAFKA_CREATE_TOPICS'`        | create topics during the build, example Topic1 will have 1 partition and 1 replica|
 
 
-        
+<img src="./Img/docker-compose.png">
+
 pip3 install kafka-python
