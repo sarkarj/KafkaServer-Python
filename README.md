@@ -160,5 +160,4 @@ Now the consumer is listening, create a Kafka [Producer](./Untitled.ipynb) that 
     producer.send('Topic1', key=b'RemoteSystem', value=b'Message From a Remote System')
 
 Check the consumer if it has received the messages sent from the producer through the Kafka service
-
-<img src= "./Img/ProducerConsumer.png")
+<img src="./Img/ProducerConsumer.png">
