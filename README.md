@@ -161,3 +161,5 @@ Now the consumer is listening, create a Kafka [Producer](./Untitled.ipynb) that 
 
 Check the consumer if it has received the messages sent from the producer through the Kafka service
 <img src="./Img/ProducerConsumer.png">
+
+This is how a simple Kafka setup as a microservice in AWS EC2 and using Kafka-Python consumer and producer to call the service
