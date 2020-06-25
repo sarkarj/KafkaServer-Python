@@ -139,24 +139,26 @@ Start the consumer (in a second terminal):
 
 <img src="./Img/runlocal.png">
 
-## Step 3 - Execute Python-Kafka client remotely
+## Step 4 - Execute Python-Kafka client remotely
 
-Install Kafka-python using Python pip Package Manager in the local system to call the Producer and Consumer API
+Install Kafka-python using Python pip package manager in the local system
 
     pip3 install kafka-python
 
-Creating a Kafka [Consumer](./kafkaconsumer.py)
+Create a Kafka [Consumer](./kafkaconsumer.py) and execute from [Jupyter Notebook](./Untitled.ipynb) or [CLI]((./kafkaconsumer.py)
 
     from kafka import KafkaConsumer
     consumer = KafkaConsumer('Topic1', bootstrap_servers='3.17.156.95:9092')
     for msg in consumer:
     print (msg.key, msg.value)
     
-Creating a Kafka [Producer](./Untitled.ipynb) 
+Now the consumer is listening, create a Kafka [Producer](./Untitled.ipynb) that will generate messages and publish to the Kafka server on the same topic. These messages will be consumed by the Kafka consumer subscribed to that topic.
 
     from kafka import KafkaProducer
     producer = KafkaProducer(bootstrap_servers='3.17.156.95:9092')
     for _ in range(3):
     producer.send('Topic1', key=b'RemoteSystem', value=b'Message From a Remote System')
 
+Check the consumer if it has received the messages sent from the producer through the Kafka service
 
+<img src= "./Img/ProducerConsumer.png)
