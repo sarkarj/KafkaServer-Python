@@ -167,4 +167,5 @@ A sample one:
 <img src="./Img/kafkaConsumer.png">
 
 Kafka takes a message as a sequence of bytes separated into key and value (message payload).
+
 So this is about the Kafka-Python consumer and producer calling the Kafka microservice running in AWS EC2.
