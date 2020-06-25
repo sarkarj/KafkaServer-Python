@@ -162,6 +162,9 @@ Now the consumer is listening, create a Kafka [Producer](./Untitled.ipynb) that 
     producer.send('Topic1', key=b'RemoteSystem', value=b'Message From a Remote System')
 
 Check the consumer if it has received the messages sent from the producer through the Kafka service.
+
+A sample one:
 <img src="./Img/kafkaConsumer.png">
 
+Kafka takes a message as a sequence of bytes separated into key and value (message payload).
 So this is about the Kafka-Python consumer and producer calling the Kafka microservice running in AWS EC2.
