@@ -141,9 +141,11 @@ Start the consumer (in a second terminal):
 
 ## Step 4 - Execute Python-Kafka client remotely
 
-Install Kafka-python using Python pip package manager in the local system
+Install Kafka-python using Python pip package manager in the local system to call the Producer and Consumer API
 
     pip3 install kafka-python
+
+Grab the IPv4 public IP address of the EC2 Kafka Server
 
 Create a Kafka [Consumer](./kafkaconsumer.py) and execute from [Jupyter Notebook](./Untitled.ipynb) or [CLI]((./kafkaconsumer.py)
 
@@ -152,14 +154,14 @@ Create a Kafka [Consumer](./kafkaconsumer.py) and execute from [Jupyter Notebook
     for msg in consumer:
     print (msg.key, msg.value)
     
-Now the consumer is listening, create a Kafka [Producer](./Untitled.ipynb) that will generate messages and publish to the Kafka server on the same topic. These messages will be consumed by the Kafka consumer subscribed to that topic.
+Now the consumer is listening, create a Kafka [Producer](./Untitled.ipynb) that will generate messages and publish to the Kafka server on the same topic. Kafka consumer will consume the messages subscribed to that topic.
 
     from kafka import KafkaProducer
     producer = KafkaProducer(bootstrap_servers='3.17.156.95:9092')
     for _ in range(3):
     producer.send('Topic1', key=b'RemoteSystem', value=b'Message From a Remote System')
 
-Check the consumer if it has received the messages sent from the producer through the Kafka service
+Check the consumer if it has received the messages sent from the producer through the Kafka service.
 <img src="./Img/ProducerConsumer.png">
 
-This is how a simple Kafka setup as a microservice in AWS EC2 and using Kafka-Python consumer and producer to call the service
+So this is about the Kafka-Python consumer and producer calling the Kafka microservice running in AWS EC2.
