@@ -1,4 +1,4 @@
-# KafkaServer-Python
+# KafkaServer-Python real-time publish-subscribe messaging 
 
 Buiding a **[Kafka](https://kafka.apache.org/)** server as a **microservice**, from an automated **containerized** implementation in **[AWS EC2](https://aws.amazon.com/console/)** and use **[Kafka-Python](https://pypi.org/project/kafka-python/)** consumer and producer in few simple steps!
 
